@@ -17,6 +17,7 @@ namespace AddressBookSystemADO.Net
                     "2. Edit Existing Contact\n" +
                     "3. Delete Contact\n" +
                     "4. Retrieve Contact Belongs To City Or State\n" +
+                    "5. Size Of AddressBook By City\n" +
                     "0. Exit\n" +
                     "Select One Option: ");
                 choice = Convert.ToInt32(Console.ReadLine());
@@ -52,6 +53,9 @@ namespace AddressBookSystemADO.Net
                         }
                         else
                             Console.WriteLine("-----Data Not Found-----");
+                        break;
+                    case 5:
+                        operations.SizeOfAddressBookByCity();
                         break;
                     case 0:
                         Console.WriteLine("________________________________________\n");
