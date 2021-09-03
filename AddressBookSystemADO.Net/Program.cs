@@ -7,6 +7,8 @@ namespace AddressBookSystemADO.Net
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Address Book System");
+            Option operation = new Option();
+            operation.AddressBookOperation();
         }
     }
 }
