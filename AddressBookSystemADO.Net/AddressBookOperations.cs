@@ -301,6 +301,31 @@ namespace AddressBookSystemADO.Net
             }
         }
 
-        
+        public void CountByType()
+        {
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand("spCountByType", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                Console.Write("Give Type: ");
+                string type = Console.ReadLine();
+                sqlCommand.Parameters.AddWithValue("@AddressBookType", type);
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                if (reader.Read())
+                {
+                    Console.WriteLine("________________________________________\n");
+                    Console.WriteLine(string.Format("Number Of Contacts Belongs To " + type + " Type: {0}", reader[0]));
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
     }
 }

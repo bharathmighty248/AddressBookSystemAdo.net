@@ -49,6 +49,9 @@ namespace AddressBookSystemADO.Net
                     case 7:
                         operations.AlterTableAddColumn();
                         break;
+                    case 8:
+                        operations.CountByType();
+                        break;
                     case 0:
                         Console.WriteLine("________________________________________\n");
                         Console.WriteLine("-----Thankyou-----");
