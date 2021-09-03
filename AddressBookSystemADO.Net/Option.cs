@@ -19,6 +19,8 @@ namespace AddressBookSystemADO.Net
                     "4. Retrieve Contact Belongs To City Or State\n" +
                     "5. Size Of AddressBook By City\n" +
                     "6. Retrieve Contacts Belongs To City Sorted Alphabatically\n" +
+                    "7. Alter Table To Have Type And Name\n" +
+                    "8. Count By Type\n" +
                     "0. Exit\n" +
                     "Select One Option: ");
                 choice = Convert.ToInt32(Console.ReadLine());
@@ -35,50 +37,17 @@ namespace AddressBookSystemADO.Net
                         break;
                     case 4:
                         operations.RetrieveContactBelongsToCityOrState();
-                        if (operations.addressBook.Count > 0)
-                        {
-                            Console.WriteLine("________________________________________\n");
-                            foreach (AddressBook contact in operations.addressBook)
-                            {
-                                Console.WriteLine("Contact Id: " + contact.ContactId);
-                                Console.WriteLine("FirstName: " + contact.FirstName);
-                                Console.WriteLine("LastName: " + contact.LastName);
-                                Console.WriteLine("Address: " + contact.Address);
-                                Console.WriteLine("City: " + contact.City);
-                                Console.WriteLine("State: " + contact.State);
-                                Console.WriteLine("Zip: " + contact.Zip);
-                                Console.WriteLine("PhoneNumber: " + contact.PhoneNumber);
-                                Console.WriteLine("Email: " + contact.Email);
-                                Console.WriteLine("________________________________________\n");
-                            }
-                        }
-                        else
-                            Console.WriteLine("-----Data Not Found-----");
+                        operations.Display();
                         break;
                     case 5:
                         operations.SizeOfAddressBookByCity();
                         break;
                     case 6:
                         operations.RetrieveContactBelongsToCitySortedAlphabatically();
-                        if (operations.addressBook.Count > 0)
-                        {
-                            Console.WriteLine("________________________________________\n");
-                            foreach (AddressBook contact in operations.addressBook)
-                            {
-                                Console.WriteLine("Contact Id: " + contact.ContactId);
-                                Console.WriteLine("FirstName: " + contact.FirstName);
-                                Console.WriteLine("LastName: " + contact.LastName);
-                                Console.WriteLine("Address: " + contact.Address);
-                                Console.WriteLine("City: " + contact.City);
-                                Console.WriteLine("State: " + contact.State);
-                                Console.WriteLine("Zip: " + contact.Zip);
-                                Console.WriteLine("PhoneNumber: " + contact.PhoneNumber);
-                                Console.WriteLine("Email: " + contact.Email);
-                                Console.WriteLine("________________________________________\n");
-                            }
-                        }
-                        else
-                            Console.WriteLine("-----Data Not Found-----");
+                        operations.Display();
+                        break;
+                    case 7:
+                        operations.AlterTableAddColumn();
                         break;
                     case 0:
                         Console.WriteLine("________________________________________\n");
