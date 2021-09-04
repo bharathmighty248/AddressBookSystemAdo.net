@@ -21,6 +21,8 @@ namespace AddressBookSystemADO.Net
                     "6. Retrieve Contacts Belongs To City Sorted Alphabatically\n" +
                     "7. Alter Table To Have Type And Name\n" +
                     "8. Count By Type\n" +
+                    "9. Insert New Contact With Type\n" +
+                    "10. Retrieve All Contacts\n" +
                     "0. Exit\n" +
                     "Select One Option: ");
                 choice = Convert.ToInt32(Console.ReadLine());
@@ -51,6 +53,12 @@ namespace AddressBookSystemADO.Net
                         break;
                     case 8:
                         operations.CountByType();
+                        break;
+                    case 9:
+                        operations.InsertContactWithType();
+                        break;
+                    case 10:
+                        operations.RetrieveAllContacts();
                         break;
                     case 0:
                         Console.WriteLine("________________________________________\n");
