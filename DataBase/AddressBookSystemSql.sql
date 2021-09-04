@@ -69,7 +69,7 @@ AddressId int not null Identity(1,1) Primary key,
 Address varchar(200) not null,
 City varchar(50) not null,
 State varchar(50) not null,
-Zip bigint not null
+Zip varchar(20) not null
 )
 
 Insert Into Address values
@@ -79,7 +79,7 @@ Insert Into Address values
 ('Chagallu','WestGodavari','AP','534342'),
 ('Ameerpet','Hyderabad','TS','500018')
 
-Select * From Address;
+Select * From Address
 
 Create Table ContactType
 (
@@ -92,14 +92,14 @@ Insert Into ContactType values
 ('Friends'),
 ('Profession')
 
-select * from ContactType;
+select * from ContactType
 
 Create Table Contact
 (
 ContactId int not null Identity(1,1) primary key,
 FirstName varchar(30) not null,
 LastName varchar(30) not null,
-PhoneNumber bigint not null,
+PhoneNumber varchar(20) not null,
 Email varchar(100) not null,
 AddressId int not null Foreign Key References Address(AddressId),
 ContactTypeId int not null Foreign key References ContactType(ContactTypeId)
